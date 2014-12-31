@@ -24,12 +24,7 @@
     #define MBLabelAlignmentCenter UITextAlignmentCenter
 #endif
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
-	#define MB_TEXTSIZE(text, font) [text length] > 0 ? [text \
-		sizeWithAttributes:@{NSFontAttributeName:font}] : CGSizeZero;
-#else
-	#define MB_TEXTSIZE(text, font) [text length] > 0 ? [text sizeWithFont:font] : CGSizeZero;
-#endif
+#define MB_TEXTSIZE(text, font) [text length] > 0 ? [text sizeWithFont:font] : CGSizeZero;
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
 	#define MB_MULTILINE_TEXTSIZE(text, font, maxSize, mode) [text length] > 0 ? [text \
